@@ -1,0 +1,35 @@
+body, html  {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vh;
+    background-color: pink;
+
+}
+
+.grid-countainer {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 200px 50px repeat(3, 1fr) 3fr;
+    grid-template-columns: 1fr 3fr;
+    /*ou grid-template : 200px 50px repeat(3, 1fr) 3fr / 1fr 3fr;*/
+    gap: 10px;
+}
+
+.boite {
+    background-color: red;
+
+}
+
+.boite:nth-child(6) {
+    grid-row: 5;
+    grid-column: 1/3; /*ou 1/span2 (signifie s'étendre sur 2 column*/
+}
+
+.boite:nth-child(3) {
+    grid-column: 1 /span2;
+    grid-row: 1;
+}
