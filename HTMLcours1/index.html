@@ -180,6 +180,91 @@
     
     <button id="mon-bouton" disabled>Click me !</button>
 
+    <section> <!-- formulaire -->
+        <form action="mailto:abc@exemple.com">
+            <fieldset>
+                <legend>Info de base</legend>
+                <div>
+                    <label for="prenom"> Prenom :</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Justin, Franck, Jean">
+                </div>
+                <div>
+                    <label for="nomFamille"> Nom de famille :</label>
+                    <input type="text" id="nomFamille" name="nomFamille" placeholder="Dupont" >
+                </div>
+                <div>
+                    <label for="email"> Email :</label>
+                    <input type="email" id="mail" name="mail" placeholder="abcd@exemple.com" >
+                </div>
+                <div>
+                    <label for="age"> Age :</label>
+                    <input type="number" id="age" name="age" required min="0" max="200" step="0.5" value="1" >
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Type de question</legend>
+                <div>
+                    <label for="questionType">Sujet</label>
+                    <select required name="questionType" id="questionType">
+                        <option value="">Selectionner un sujet ..</option>
+                        <optgroup label="Compte">
+                            <option value="1">j'ai un probleme de connection</option>
+                            <option value="2">Je me suis fait hacker</option>
+                        </optgroup>
+                        <optgroup label="paiement">
+                            <option value="3">Pas passé</option>
+                            <option value="4"> Par cheque</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="languageKnow">Sujet</label>
+                    <select multiple required name="languageKnow" id="languageKnow">
+                        <optgroup label="Europe">
+                            <option value="enUK">Anglais britanique</option>
+                            <option value="frfr">Français</option>
+                        </optgroup>
+                        <optgroup label="Asie">
+                            <option value="krKR">Coréen</option>
+                            <option value="chMD">Mandarin</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Importance</legend>
+                <div>
+                    <input type="checkbox" name="isImportant" id="isImportant">
+                    <label for="isImportant">Est-ce important ?</label>
+                </div>
+                <div>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="female">Male</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </div>
+                <div>
+                    <label for="score">Score :</label>
+                    <input type="range" name="score" id="score" min="1" max="5" list="score">
+                    <datalist id="score">
+                        <option value="1"label="nul">Nul</option>
+                        <option value="2"label="mauvais">Mauvais</option>
+                        <option value="3"label="moyen">Moyen</option>
+                        <option value="4"label="bon">Bon</option>
+                        <option value="5"label="excellent">excellent</option>
+                    </datalist>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Description du problème</legend>
+                <label for="description">Description</label>
+                <textarea style="resize: none;" name="description" id="description" cols="80" rows="5"></textarea>
+            </fieldset>
+            <button type="submit">Envoyer</button> <!-- type : submit (par defaut)-->
+        </form>
+
+    </section>
+
 
 </body>
 </html>
