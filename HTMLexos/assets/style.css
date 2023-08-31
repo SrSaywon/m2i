@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Noto+Sans+JP&family=Roboto+Condensed&display=swap');
 
+body, html {
+    margin: 0;
+}
 .image {
     height: 500px;
     width: 500px;
@@ -90,6 +93,8 @@ button:hover {
 }
 
 .flexboxContainerNav {
+    position: sticky;
+    top : 30px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -107,3 +112,36 @@ button:hover {
     color: black;
     font-size: 30px;
 }
+
+.formulaire {
+    display: flex;
+    background-color: rgb(184, 180, 180);
+    justify-content: center;
+    text-align: center;
+    padding:20px 0 30px 0;
+}
+
+table {
+    /*background-color: gray;
+    padding: 50px;*/
+    margin: 30px;
+    color: white;
+    border: 5px dashed rgb(255, 255, 255);
+    /*border-radius: 20px;*/
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    border: 2px solid white;
+    padding: 10px;
+    
+}
+
+.tableau {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    
+}
+
