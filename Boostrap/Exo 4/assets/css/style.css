@@ -1,0 +1,10 @@
+.boite-perso {
+    height: 550px;
+    width: 600px;
+    background-color: rgb(30, 32, 41);
+    padding: 30px;
+}
+
+hr {
+    color: white;
+}
