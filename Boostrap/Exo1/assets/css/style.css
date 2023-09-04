@@ -1,0 +1,13 @@
+.boiteCouleur >div:nth-child(4n+1) > div {
+    background-color: red;
+}
+.boiteCouleur >div:nth-child(4n+2) > div {
+    background-color: green;
+}
+.boiteCouleur >div:nth-child(4n+3) > div {
+    background-color: blue;
+}
+.boiteCouleur >div:nth-child(4n+4) > div {
+    background-color: gray;
+}
+
