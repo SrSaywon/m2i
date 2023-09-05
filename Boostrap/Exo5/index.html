@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div class="col-10 offset-1 bg-dark rounded text-light p-3">
+            <h2 class="text-light text-start m-50 fw-light display-1">- Ajouter un livre -</h2>
+            <hr>
+            <form>
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label class="form-label" for="title">Titre :</label>
+                        <input type="text" class="form-control" name="title" id="title">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label" for="isbn">ISBN :</label>
+                        <input type="text" class="form-control" name="isbn" id="isbn">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label class="form-label" for="author">Auteur :</label>
+                        <select class="form-select" name="author" id="author" required>
+                            <option value="">Sélectionner un auteur</option>
+                            <option value="1">Auteur 1</option>
+                            <option value="2">Auteur 2</option>
+                            <option value="3">Auteur 3</option>
+                        </select>
+                    </div> 
+                    <div class="col-6">
+                            <label class="form-label" for="genre">Genre :</label>
+                            <select class="form-select" size="3" name="genre" id="genre" aria-label="Size 3 select example">
+                                <option value="1">genre 1</option>
+                                <option value="2">genre 2</option>
+                                <option value="3">genre 3</option>
+                                <option value="3">genre 4</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label class="form-label" for="cover">Couverture :</label>
+                        <input type="file" class="form-control" name="cover" id="cover">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label class="form-label" for="scor">Score :</label>
+                        <input type="range" class="form-range" name="scor" id="scor" min="1" max="5" list="12">
+                        <div class="row">
+                            <div class="col-1 text-start">Nul</div>
+                            <div class="col-3 text-end">Mauvais</div>
+                            <div class="col-4 text-center">Normal</div>
+                            <div class="col-2 text-center">Bon</div>
+                            <div class="col-2 text-end">Bestseller</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label class="form-label" for="prix">Prix :</label>
+                        <input type="number" class="form-control" name="prix" id="prix">
+
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div class="col-6">
+                        <label class="form-label" for="langue">Langue :</label>
+                        <select class="form-select" name="langue" id="langue" required>
+                            <option value="">Sélectionner une langue</option>
+                            <option value="1">Langue 1</option>
+                            <option value="2">Langue 2</option>
+                            <option value="3">Langue 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description: </label>
+                    <textarea class="form-control" name="description" id="description" cols="80" rows="5" required></textarea>
+                </div>
+            </form>
+            <hr>
+
+
+        </div>
+        
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
