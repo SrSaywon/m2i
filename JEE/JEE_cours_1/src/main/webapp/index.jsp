@@ -11,6 +11,7 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <ul>
+    <li><a href="monServlet">Mon servlet</a></li>
     <li><b>Date du jour:</b><%=LocalDate.now()  %></li>
     <% for (int i = 1; i < 6; i++) { %>
     <li>Item n° <%= i %></li>
