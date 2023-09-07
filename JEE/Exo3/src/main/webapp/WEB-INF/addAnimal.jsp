@@ -5,38 +5,47 @@
   Time: 10:06
   To change this template use File | Settings | File Templates.
 --%>
+
 <jsp:useBean id="mode" type="java.lang.String" scope="request"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Ajouter animaux</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-    <main>
-        <form action="form" method="post">
-            <div>
-                <label for="type">Type: </label>
-                <input type="text" name="type" id="type">
-            </div>
-            <div>
-                <label for="espece">Espèce: </label>
-                <input type="text" name="espece" id="espece">
-            </div>
-            <div>
-                <label for="age">Age: </label>
-                <input type="number" min="0" max="200" step="1" name="age" id="age">
-            </div>
-            <div>
-                <label for="nom">Nom: </label>
-                <input type="text" name="nom" id="nom">
-            </div>
-            <div>
-                <label for="couleur">Type: </label>
-                <input type="text" name="couleur" id="couleur">
-            </div>
+    <main class="container">
+        <div class="text-bg-dark rounder overflow-hidden col-4 offset-4 p-2 text-center">
+            <h2>Forms</h2>
             <hr>
-            <button>Envoyer</button>
-        </form>
+            <form action="form" method="post" >
+                <div class="row m-2">
+                    <div class="col-4 text-start"><label for="type">Type: </label></div>
+                    <div class="col-8"><input type="text" name="type" id="type"></div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-4 text-start"><label for="espece">Espèce: </label></div>
+                    <div class="col-8"><input type="text" name="espece" id="espece"></div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-4 text-start"><label for="age">Age: </label></div>
+                    <div class="col-8"><input type="number" min="0" max="200" step="1" name="age" id="age"></div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-4 text-start"><label for="nom">Nom: </label></div>
+                    <div class="col-8"><input type="text" name="nom" id="nom"></div>
+                </div>
+                <div class="row m-2">
+                    <div class="col-4 text-start"><label for="couleur">Type: </label></div>
+                    <div class="col-8"><input type="text" name="couleur" id="couleur"></div>
+                </div>
+                <hr>
+                <button class="btn btn-outline-light"><i class="bi bi-send"></i>Envoyer</button>
+            </form>
+        </div>
     </main>
 
 </body>

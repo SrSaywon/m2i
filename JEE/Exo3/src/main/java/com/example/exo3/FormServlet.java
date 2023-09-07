@@ -36,11 +36,11 @@ public class FormServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String type = req.getParameter("type");
         String espece = req.getParameter("espece");
-        Double age = Double.parseDouble("age");
+        Integer age = Integer.parseInt(req.getParameter("age"));
         String nom = req.getParameter("nom");
         String couleur = req.getParameter("couleur");
 
-        System.out.printf("Type: %s, Espèce: %s, Age: %f, Nom: %s, Couleur: %s ", type, espece, age, nom, couleur );
+        System.out.printf("Type: %s, Espèce: %s, Age: %d, Nom: %s, Couleur: %s ", type, espece, age, nom, couleur );
 
     }
 }
