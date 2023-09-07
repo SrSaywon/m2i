@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.exo3.AnimalsObject" %><%--
   Created by IntelliJ IDEA.
   User: Administrateur
   Date: 07/09/2023
@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<jsp:useBean id="mode" type="java.lang.String" scope="request"/>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -40,11 +40,36 @@
                 </div>
                 <div class="row m-2">
                     <div class="col-4 text-start"><label for="couleur">Type: </label></div>
-                    <div class="col-8"><input type="text" name="couleur" id="couleur"></div>
+                    <div class="col-8"><input type="color" name="couleur" id="couleur"></div>
                 </div>
                 <hr>
                 <button class="btn btn-outline-light"><i class="bi bi-send"></i>Envoyer</button>
             </form>
+        </div>
+        <div>
+            <theader>
+                <tr>
+                    <th>Type</th>
+                    <th>Espèce</th>
+                    <th>Age</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                </tr>
+            </theader>
+            <tbody>
+            <% if (!animals.isEmpty()) {%>
+            <tr>
+                <% for (AnimalsObject animal : animals) {%>
+                <td><%= animal.getType() %></td>
+                <td><%= animal.getEspece() %></td>
+                <td><%= animal.getAge() %></td>
+                <td><%= animal.getName() %></td>
+                <td><%= animal.getColor() %></td>
+                <%}%>
+            </tr>
+
+            <%}%>
+            </tbody>
         </div>
     </main>
 

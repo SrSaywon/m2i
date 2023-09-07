@@ -8,27 +8,23 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.lang.invoke.StringConcatFactory;
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 @WebServlet(name = "formServlet", value = "/form")
 public class FormServlet extends HttpServlet {
 
-    private String myInitParametre;
+    private List<AnimalsObject> animals;
 
     @Override
     public void init() throws ServletException {
-        myInitParametre = getServletContext().getInitParameter("haha");
-        System.out.println(myInitParametre);
+        animals =new ArrayList<>();
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String mode = "add";
-        if(!req.getParameter("mode").isBlank()){
-            mode = req.getParameter("mode");
-        }
-        req.setAttribute("mode",mode);
         getServletContext().getRequestDispatcher("/WEB-INF/addAnimal.jsp").forward(req,resp);
     }
 
@@ -41,6 +37,15 @@ public class FormServlet extends HttpServlet {
         String couleur = req.getParameter("couleur");
 
         System.out.printf("Type: %s, Espèce: %s, Age: %d, Nom: %s, Couleur: %s ", type, espece, age, nom, couleur );
+
+        req.setAttribute("type", "");
+        req.setAttribute("espece", "");
+        req.setAttribute("age", "");
+        req.setAttribute("name", "");
+        req.setAttribute("color", "");
+        req.setAttribute("animals", animals);
+
+        getServletContext().getRequestDispatcher("/WEB-INF/addAnimal.jsp").forward(req,resp);
 
     }
 }
