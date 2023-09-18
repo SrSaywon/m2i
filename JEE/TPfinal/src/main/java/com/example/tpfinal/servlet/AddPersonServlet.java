@@ -1,2 +1,4 @@
-package com.example.tpfinal.servlet;public class AddPersonServlet {
+package com.example.tpfinal.servlet;
+
+public class AddPersonServlet {
 }

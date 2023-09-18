@@ -1,6 +1,6 @@
 package com.example.tpfinal.servlet;
 
-import com.example.tpfinal.data.FakeDB;
+import com.example.tpfinal.data.FakeDBUser;
 import com.example.tpfinal.models.User;
 import com.example.tpfinal.models.UserDTO;
 import jakarta.servlet.ServletException;
@@ -35,7 +35,7 @@ public class SignInServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        Optional<User> foundUser = FakeDB.users.stream().filter(u -> u.getUsername().equals(username) && u.getPassword().equals(password)).findFirst();
+        Optional<User> foundUser = FakeDBUser.users.stream().filter(u -> u.getUsername().equals(username) && u.getPassword().equals(password)).findFirst();
 
         if (foundUser.isPresent()) {
             req.getSession().setAttribute("user", foundUser.get());
