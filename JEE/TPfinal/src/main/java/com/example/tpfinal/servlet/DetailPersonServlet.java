@@ -1,4 +1,4 @@
 package com.example.tpfinal.servlet;
 
-public class FormPersonServlet {
+public class DetailPersonServlet {
 }
