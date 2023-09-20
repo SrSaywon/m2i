@@ -12,15 +12,5 @@ import java.io.IOException;
 @WebServlet (name = "listPerson", value = "/servlet/list")
 public class ListPersonServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = (User) req.getSession().getAttribute("user");
 
-        if (user != null) {
-            req.setAttribute("user", user);
-            req.getRequestDispatcher("/WEB-INF/person/listPerson.jsp").forward(req, resp);
-        }else {
-            resp.sendRedirect(req.getContextPath()+"/auth/signIn");
-        }
-    }
 }

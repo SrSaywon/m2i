@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <span th:replace="~{home :: bootstrapImp}"></span>
+</head>
+<body>
+    <header th:insert="~{home :: nav.navBar}">
+
+    </header>
+    <main class="container">
+        <h1 class="fw-light">List de Contact</h1>
+        <hr>
+        <table th:if="${!contacts.isEmpty()}" class="rounded overflow-hidden table table-dark table-striped text-center align-middle">
+            <thead>
+                <tr>
+                    <th>Prenom</th>
+                    <th>Nom</th>
+                    <th>Age</th>
+                    <th>Numéro de téléphone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="c:${contacts}">
+                    <td th:text="${c.firstName}"></td>
+                    <td th:text="${c.lastName}"></td>
+                    <td th:text="${c.age}"></td>
+                    <td th:text="${c.phoneNumber}"></td>
+                    <td><a th:href="@{/contacts/{contactId}(contactId=${c.id})}" class="btn btn-outline-info"><i class="bi bi-eye"></i> Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p th:if="${contacts.isEmpty()}">Il n'y à pas de contact dans la database pour le moment</p>
+        <hr>
+        <div class="text-end">
+            <a th:href="@{/contacts/add}" class="btn btn-success"><i class="bi bi-plus-circle"></i>Ajouter un contact</a>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Detail</title>
+</head>
+<body>
+    <main>
+        <p th:if="${cars.isEmpty()}">
+            There is no car here!
+        </p>
+        <ul th:if="${!cars.isEmpty()}">
+            <li th:each="p: ${cars}"><span th:text="${c}"></span></li>
+        </ul>
+    </main>
+</body>
+</html>
