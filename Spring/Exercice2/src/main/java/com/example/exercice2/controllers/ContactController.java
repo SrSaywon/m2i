@@ -25,6 +25,8 @@ public class ContactController {
     public String listContacts(Model model, @RequestParam(value = "firstName", defaultValue = "") String filterByFirstName) {
         List<ContactDTO> contacts = contactService.getContacts();
 
+        log.debug("GET to /contacts/contactList");
+
         if (!filterByFirstName.isEmpty() && !filterByFirstName.isBlank()) {
             contacts = contacts.stream().filter(c -> c.getLastName().startsWith(filterByFirstName)).toList();
         }
@@ -62,6 +64,11 @@ public class ContactController {
     public String addContactHandler (ContactDTO newContact) {
         contactService.addContact(newContact);
 
+        return "redirect:/contacts";
+    }
+
+    @PostMapping("/delete/{contactId}")
+    public String deleteContactById(@PathVariable("contactId") UUID id) {
         return "redirect:/contacts";
     }
 
