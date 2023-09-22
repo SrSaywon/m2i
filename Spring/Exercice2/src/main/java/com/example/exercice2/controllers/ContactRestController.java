@@ -17,7 +17,7 @@ import java.util.UUID;
 @RequestMapping("/api/v1/contacts")
 @RequiredArgsConstructor
 @Slf4j
-public class ConstactRestController {
+public class ContactRestController {
     private final ContactService contactService;
 
 
@@ -28,7 +28,7 @@ public class ConstactRestController {
         log.debug("GET to /contacts/contactList");
 
         if (!filterByFirstName.isEmpty() && !filterByFirstName.isBlank()) {
-            contacts = contacts.stream().filter(c -> c.getFirstName().startsWith((filterByFirstName)).toList;
+            contacts = contacts.stream().filter(c -> c.getFirstName().startsWith(filterByFirstName)).toList();
         }
 
         return contacts;
@@ -46,7 +46,7 @@ public class ConstactRestController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> addContactHandler(@PathVariable("contactId")UUID id) {
+    public ResponseEntity<String> addContactHandler(@RequestBody ContactDTO newContact) {
         ContactDTO createdContact = contactService.addContact(newContact);
 
         return new ResponseEntity<String>("contact created! New id: " + createdContact.getId(), HttpStatus.CREATED);

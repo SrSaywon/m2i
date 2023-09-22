@@ -60,6 +60,21 @@ public class ContactController {
         return "contact/contactForm";
     }
 
+//    @GetMapping("/delete/{contactId}")
+//    public String contactDelete(@PathVariable("contactId")UUID id, Model model) {
+//        Optional<ContactDTO> foundContact = contactService.getContactById(id);
+//
+//        if (foundContact.isPresent()){
+//            model.addAttribute("contact", foundContact.get());
+//            model.addAttribute("mode", "delete");
+//
+//            return "contact/contactList";
+//        }
+//
+//        throw new RessourceNotFound();
+//
+//    }
+
     @PostMapping("/add")
     public String addContactHandler (ContactDTO newContact) {
         contactService.addContact(newContact);
@@ -69,6 +84,7 @@ public class ContactController {
 
     @PostMapping("/delete/{contactId}")
     public String deleteContactById(@PathVariable("contactId") UUID id) {
+
         return "redirect:/contacts";
     }
 
