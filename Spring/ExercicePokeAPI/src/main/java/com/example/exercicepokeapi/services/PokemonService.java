@@ -17,8 +17,10 @@ public class PokemonService {
         RestTemplate restTemplate = restTemplateBuilder.build();
 
         ResponseEntity<PokeAPIResponse> response = restTemplate.getForEntity("/pokemon/" + value, PokeAPIResponse.class);
+        PokeAPIResponse responseDTO = response.getBody();
         String formattedId = String.format("%03d", response.getBody().getId());
-        response.getBody().setId(Integer.parseInt(formattedId));
-        return response.getBody();
+        responseDTO.setFormattedId(formattedId);
+
+        return responseDTO;
     }
 }

@@ -14,17 +14,35 @@
     <h1 class="text-center fw-light display-4">Who's that Pokémone ?</h1>
     <hr>
     <div>
-        <form class="d-flex form-control-lg input-group" role="search">
+        <form th:action="@{/pokemon/search}" method="post" class="d-flex form-control-lg input-group" role="search">
             <input class="form-control " type="search" placeholder="Rechercher par Nom ou Id" aria-label="Search">
-            <a th:href="/pokemon/{idOrName}" class="btn btn-warning">Search</a>
+            <a th:href="@{/pokemon/search}" class="btn btn-warning">Search</a>
         </form>
     </div>
     <br>
     <div class="col-8 offset-2 text-bg-dark p-3 rounded" >
-        <h2 class="text-center tw-light display-8" th:field="*{name}"></h2>
-        <div class="row-2">
-
+        <h2 class="text-center tw-light display-8" th:text="*{#strings.capitalize(pokemon.name)}"></h2>
+        <div class="rounded overflow-hidden text-center">
+            <img th:src="${'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' + pokemon.formattedId + '.png'}" th:alt="*{pokemon.name}">
         </div>
+        <table class="table table-dark text-center rounded align-middle">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Types</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </main>
