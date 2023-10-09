@@ -1,0 +1,22 @@
+docker search 2048
+$ docker pull oats87/2048
+$ docker run -d --name 2048-thomas -p 8080:80 oats87/2048
+docker ps
+docker run -d --name 20482-thomas -p 8081:80 oats87/2048
+docker ps
+http://localhost:8080/
+http://localhost:8081/
+docker stop $(docker ps -q)
+docker ps -a
+docker start 20482-thomas
+docker ps
+docker stop 756
+docker ps -a
+docker rm $(docker ps -qa)
+docker pull ghost
+docker run -d --name ghost-thomas -p 8080:80 ghost
+docker ps -a
+docker run -d --name thomas-ghost2 -p 8083:2368 -e NODE_ENV=development ghost
+docker ps
+
+

@@ -1,0 +1,22 @@
+docker pull nginx
+docker run -d --name nginx-web -p 8080:80 nginx
+docker ps
+http://localhost:8080/
+docker exec -i -t nginx-web /bin/bash
+apt-get update
+apt install nano
+cd /usr/share/nginx/html
+ ls
+nano index.html
+
+docker search apache
+docker pull httpd
+docker run -d --name httpd-web -p 8081:80 httpd
+docker ps
+docker exec -i -t httpd-web /bin/bash
+apt update
+apt install nano
+ls
+cd /usr/local/apache2/htdocs/
+ls
+nano index.html

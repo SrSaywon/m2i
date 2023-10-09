@@ -1,0 +1,4 @@
+FROM node:12.7-alpine  AS build
+WORKDIR /tmp
+COPY package.json package-lock.json 
+

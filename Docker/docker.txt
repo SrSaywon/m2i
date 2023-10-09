@@ -1,0 +1,3 @@
+docker buid -t "nom1" .
+
+docker run -d -p 8080:"ton port" --name "nom2" "nom1"

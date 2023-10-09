@@ -1,2 +1,4 @@
-package com.example.demo_spring_security_session.controllers;public class PrivateRestController {
+package com.example.demo_spring_security_session.controllers;
+
+public class PrivateRestController {
 }

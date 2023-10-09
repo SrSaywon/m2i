@@ -20,9 +20,17 @@ public class BaseController {
         return "home";
     }
 
+    @GetMapping("/login")
+    public String loginForm() {
+        return "loginForm";
+    }
+
     @PostMapping("/login")
     public String login() {
         // Récupérer les valeurs du formulaire
+        public String login(String pseudo, String password, HttpServletRequest request) {
+            if (pseudo != null )
+        }
 
         // Si elles sont égales à certaines variables, tu ajoute en session l'utilisateur
 
