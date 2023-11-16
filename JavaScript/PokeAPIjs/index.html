@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <main class="container" th:object="">
+        <div class="d-flex align-items-center">
+            <a th:class="" th:href="">&lt;&lt;</a>
+            <div class="my-3 rounded row g-3 bg-danger p-3 mx-3">
+                <div class="col-12 text-center">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="PokeApi">
+                </div>
+                <div class="offset-2 col-8">
+                    <form th:action="#" method="post">
+                        <input type="text" name="searchInput" class="form-control text-bg-dark">
+                    </form>
+                </div>
+                <div class="col-6">
+                    <div class="bg-dark rounded overflow-hidden text-center">
+                        <img th:src="" th:alt="">
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="row g-1">
+                        <div class="col-12">
+                            <h3 class="fw-light text-light">Name</h3>
+                        </div>
+                        <div class="col-12">
+                            <div class="text-bg-dark rounded text-center">
+                                <h2 class="fw-light" th:text=""></h2>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <h3 class="fw-light text-light">Types</h3>
+                        </div>
+                        <div class="col-12">
+                            <div class="row g-2">
+                                <div class="col" th:each="">
+                                    <div class="text-bg-dark rounded text-center" th:text=""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row g-2">
+                                <div class="col">
+                                    <h3 class="fw-light text-light">Height</h3>
+                                    <div class="text-bg-dark rounded text-center"><span th:text=""></span>"</div>
+                                </div>
+                                <div class="col">
+                                    <h3 class="fw-light text-light">Weight</h3>
+                                    <div class="text-bg-dark rounded text-center"><span th:text=""></span>lbs</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <h3 class="fw-light text-light">Abilities</h3>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-bg-dark rounded text-center">
+                                <span th:if="" th:text=""></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="text-bg-dark rounded text-center">
+                                <span th:if="" th:text=""></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a th:class="disabled btn btn-primary rounded-circle btn btn-primary rounded-circle" th:href="">&gt;&gt;</a>
+        </div>
+
+
+    </main>
+</body>
+</html>

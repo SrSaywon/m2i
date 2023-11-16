@@ -1,0 +1,134 @@
+docker compose
+-------------------------------------------------------------------------------------------------------
+
+demo 1
+
+-------------
+dans le projet -----
+creer un fichier docker_compose.yml
+_____________________
+version : '3'
+
+services: 
+	web:
+		image: nginx:latest
+		ports:
+			- "8080:80"
+		volumes:
+			- ./html:/usr/share/nginx/html
+			
+
+______________________
+git -----
+
+se placer dans le projet
+
+docker-compose up -d
+
+cd html/
+
+echo "<h1>Salut tout le monde<h1>" > index.html
+
+-------------------------------------------------------------------------------------------
+
+demo 2
+----------
+
+dans le projet -----
+creer un fichier docker_compose.yml
+_____________________
+
+version : '3'
+
+services:
+	db: 
+		image: mysql:latest
+		ports:
+      			- 3306:3306
+		environnement: 
+			- MYSQL_ROOT_PASSWORD=12345
+			- MYSQL_DATABASE=db1
+      			- MYSQL_USER=thomas
+      			- MYSQL_PASSWORD=123456
+
+
+______________________
+git -----
+
+se placer dans le projet
+
+docker-compose up -d
+
+--------------------------------------------------------------------------------------------------------
+
+demo 3 (non fonctionnel)
+----------
+
+dans le projet -----
+creer un fichier docker_compose.yml
+_____________________
+version : '3'
+
+services: 
+	web:
+		image: node:latest
+		woring_dir: /usr/src/app
+    		volumes:
+      			- .:/usr/src/app
+    		ports:
+      			- 3000:3000
+		restart: always
+    		command: npm start
+		depends_on:
+      			- db
+
+	db:
+    		image: mongo:latest
+    		ports:
+      			- 27017:27017
+
+
+--------------------------------------------------------------------------------------------------------
+
+demo 4
+----------
+
+dans le projet -----
+creer un fichier docker_compose.yml
+_____________________
+version: '3'
+
+services:
+  image: wordpress:latest
+  environment:
+    - WORDPRESS_DB_HOST=db
+    - WORDPRESS_DB_USER=user1
+    - WORDPRESS_DB_PASSWORD-12345
+    - WORDPRESS_DB_NAME=demodb
+  ports:
+    - 8081:80
+  networs: 
+    -custom_network
+  depends_on: 
+  - db2
+  
+  db2:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
+      - MYSQL_DATABASE=demo4
+      - MYSQL_USER=thomas
+      - MYSQL_PASSWORD=123456789
+    ports:
+      - 3307:3306
+    volumes:
+      -mysql_data:/var/lib/mysql
+    networks:
+      - custom_network
+
+volumes:
+  mysql_data: 
+
+networks:
+  custom_network: 
+    -driver: bridge
